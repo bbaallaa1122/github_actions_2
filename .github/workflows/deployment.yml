@@ -18,6 +18,8 @@ jobs:
       - name: run_test
         run: npm test
   deploy:
+    needs:
+      - test
     runs-on: windows-latest
     steps:
       - name: get_code
