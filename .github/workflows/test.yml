@@ -1,0 +1,19 @@
+name: test_project
+on:
+  push:
+    branches:
+      - master
+jobs:
+  test:
+    runs-on: windows-latest
+    steps:
+      - name: get_code
+        uses: actions/checkout@v4
+      - name: install_nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: install_dependencies
+        run: npm ci
+      - name: run_test
+        run: npm test
