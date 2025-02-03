@@ -1,8 +1,0 @@
-name: output
-on: workflow_dispatch
-jobs:
-  info:
-    runs-on: windows-latest
-    steps:
-      - name: output
-        run: echo "${{toJSON(github)}}"
